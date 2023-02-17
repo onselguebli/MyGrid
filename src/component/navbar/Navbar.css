@@ -1,0 +1,130 @@
+.navbar{
+    height: 80px;
+    display:flex;
+    justify-content: center;
+    border:4px solid #dfdfdf ;
+    z-index: 2;
+    
+}
+.navContainer{
+    width:100%;
+    max-width:1420px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.navItems{
+    width:100%;
+    max-width:1420px;
+    gap: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navButton svg {
+    width: 20px;
+    height: 20px;
+    
+  }
+.navButton{
+    margin-left: 20px;
+    cursor: pointer;   
+    color:#1E6DCA;
+    background-color:white;
+    border-color: #998E8E;
+    border-radius: 1px;
+    width: 50px;
+    height: 50px;
+}
+.navButton1{
+    margin-left: 20px;
+    cursor: pointer;   
+    color:#1E6DCA;
+    background-color:white;
+    border-color: #998E8E;
+    border-radius: 1px;
+    size: 90px;
+    width: 190px;
+    height: 40px;
+    font-size: 15px;
+}
+.navButton1 svg {
+    width: 20px;
+    height: 20px;
+    
+  }
+.con{
+   
+    border: #dfdfdf;
+
+}
+.userspan{
+    font-family: 'Baloo Chettan 2', cursive;
+    color: rgb(26, 23, 23);
+  cursor: pointer;
+  text-align: center;
+  text-decoration:solid;
+    font-weight: bolder;
+  margin-top: 15px;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+ul{counter-reset: li; /* Initialise le compteur */
+        list-style: none; /* Supprime la numérotation par défaut */
+        *list-style: decimal; /* Restitue la numérotation par défaut pour IE6/7 */
+        font: 15px 'trebuchet MS', 'lucida sans';
+        padding: 0;
+        margin-bottom: 4em;
+        text-shadow: 0 1px 0 rgba(255,255,255,.5);
+      
+    }
+
+    .rectangle-list a{
+        position: relative;
+        display: block;
+        padding: .4em .4em .4em .8em;
+        *padding: .4em;
+        margin: 1em 0 1em 3em;
+        background: #ddd;
+        color: #444;
+        text-decoration: none;
+        transition: all .3s ease-out;
+        width: 70px;
+    }
+    
+    .rectangle-list a:hover{
+        background: #eee;
+    }       
+    
+    .rectangle-list a:before{
+        content: counter(li);
+        counter-increment: li;
+        position: absolute;
+        left: -2.5em;
+        top: 50%;
+        margin-top: -1em;
+        background: #1E6DCA;
+        height: 2em;
+        width: 2em;
+        line-height: 2em;
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .rectangle-list a:after{
+        position: absolute;
+        content: '';
+        border: .5em solid transparent;
+        left: -1em;
+        top: 50%;
+        margin-top: -.5em;
+        transition: all .3s ease-out;
+    }
+    
+    .rectangle-list a:hover:after{
+        left: -.5em;
+        border-left-color: #1E6DCA;
+    }
