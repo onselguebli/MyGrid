@@ -1,39 +1,37 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import { TextField } from '@material-ui/core';
 
 export default function FormDialog({open,handleClose,data,onChange,handleFormSubmit}) {
- const {id,name,age,country,date,year}=data
-
+  const {id,id_grille,nom_grille,taille_grille,couleur_fond_grille}=data
+  
   return (
     <div>
+      
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{id?"Update user":"Create new user"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{id?"modifier un grille":"Ajouter un grille"}</DialogTitle>
         <DialogContent>
-         <form>
-             <TextField id="name" value={name} onChange={e=>onChange(e)} placeholder="Enter name" label="name" variant="outlined" margin="dense" fullWidth />
-             <TextField id="age" value={age} onChange={e=>onChange(e)} placeholder="Enter age" label="age" variant="outlined" margin="dense" fullWidth />
-             <TextField id="country" value={country} onChange={e=>onChange(e)} placeholder="Enter country" label="country" variant="outlined" margin="dense" fullWidth />
-             <TextField id="date" value={date} onChange={e=>onChange(e)} placeholder="Enter Date of birth" label="Date of Birth" variant="outlined" margin="dense" fullWidth />
-             <TextField id="year" value={year} onChange={e=>onChange(e)} placeholder="Enter year of birth" label="Year of Birth" variant="outlined" margin="dense" fullWidth />
+        <form>
+             <TextField id="id_grille" value={id_grille} onChange={e=>onChange(e)} placeholder="Enter id" label="id_grille" variant="outlined" margin="dense" fullWidth required />
+             <TextField id="nom_grille" value={nom_grille} onChange={e=>onChange(e)} placeholder="Enter nom_grille" label="nom_grille" variant="outlined" margin="dense" fullWidth  required/>
+             <TextField id="taille_grille" value={taille_grille} onChange={e=>onChange(e)} placeholder="Enter taille grille" label="taille_grille" variant="outlined" margin="dense" fullWidth required />
+             <TextField id="couleur_fond_grille" value={couleur_fond_grille} onChange={e=>onChange(e)} placeholder="Enter couleur_fond_grille" label="couleur_fond_grille" variant="outlined" margin="dense" fullWidth required />
          </form>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="secondary" variant="outlined">
-            Cancel
-          </Button>
-          <Button  color="primary" onClick={()=>handleFormSubmit()} variant="contained">
-            {id?"Update":"Submit"}
+          <Button onClick={handleClose} color="secondary" variant="outlined" >Annuler</Button>
+          <Button  autoFocus  variant="contained" onClick={()=>handleFormSubmit()}>
+          {id?"Modifier":"Ajouter"}
           </Button>
         </DialogActions>
       </Dialog>
