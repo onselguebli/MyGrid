@@ -10,6 +10,9 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/sign-up/Signup";
 import ContactForm from "./pages/contactForm/ContactForm";
 import Aggrid from "./pages/aggrid/Aggrid";
+import Aggride from "./pages/aggride/Aggride"
+import { AgGridReact } from "ag-grid-react";
+
  /* import  Liste  from "./pages/liste/Liste";
   import Ticket from "./pages/ticket/Ticket";
   import Logout from "./pages/logout/Logout";
@@ -23,6 +26,7 @@ import Aggrid from "./pages/aggrid/Aggrid";
                   <Route path='/ContactForm' element={<ContactForm/>}></Route>*/
   //import "./style.css"
  // import ContactForm from "./pages/contactForm/ContactForm";
+ import Aggrid_colonne from "./pages/aggrid_colonne/Aggrid_colonne"
   function App() {
     return (
       <BrowserRouter>
@@ -34,6 +38,10 @@ import Aggrid from "./pages/aggrid/Aggrid";
                   <Route path='/Signup' element={<Signup/>}></Route>
                   <Route path='/ContactForm' element={<ContactForm/>}></Route>
                   <Route path='/Aggrid' element={<Aggrid/>}></Route>
+                  <Route path='/colonne' element={<Aggrid_colonne/>}></Route>
+                  
+                 
+                 
                   
                  
                   

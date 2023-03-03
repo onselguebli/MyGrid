@@ -8,7 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { TextField } from '@material-ui/core';
 
 export default function FormDialog({open,handleClose,data,onChange,handleFormSubmit}) {
-  const {id,id_grille,nom_grille,taille_grille,couleur_fond_grille}=data
+  const {id_grille,nom_grille,taille_grille,couleur_fond_grille}=data
   
   return (
     <div>
@@ -19,7 +19,7 @@ export default function FormDialog({open,handleClose,data,onChange,handleFormSub
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{id?"modifier un grille":"Ajouter un grille"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{id_grille?"modifier un grille":"Ajouter un grille"}</DialogTitle>
         <DialogContent>
         <form>
              <TextField id="id_grille" value={id_grille} onChange={e=>onChange(e)} placeholder="Enter id" label="id_grille" variant="outlined" margin="dense" fullWidth required />
@@ -31,7 +31,7 @@ export default function FormDialog({open,handleClose,data,onChange,handleFormSub
         <DialogActions>
           <Button onClick={handleClose} color="secondary" variant="outlined" >Annuler</Button>
           <Button  autoFocus  variant="contained" onClick={()=>handleFormSubmit()}>
-          {id?"Modifier":"Ajouter"}
+          {id_grille?"Modifier":"Ajouter"}
           </Button>
         </DialogActions>
       </Dialog>

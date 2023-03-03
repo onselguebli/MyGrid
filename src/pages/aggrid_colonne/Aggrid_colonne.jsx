@@ -7,14 +7,14 @@ import { Grid, Button } from '@material-ui/core';
 import FormDialog from '../aggrid_colonne/dialog_colonne';
 import Navbar from '../../component/navbar/Navbar';
 import Footer from '../../component/footer/Footer';
-import "./aggrid.css"
+import "./aggrid_colonne.css"
 
 const App = () => {
-  const initialvalue = { id_colonne: "", id_grille: "", nom_colonne: "", largeur_colonne: "" };
+  const initialvalue = { id_colonne: "", nom_colonne: "", largeur_colonne: "",  couleur_colonne: ""};
   const gridRef = useRef(); // Optional - for accessing Grid's API
   const [gridApi, setGridApi] = useState(null);
   const [tableData, settableData] = useState(null); // Set rowData to Array of Objects, one Object per Row
-  const url = "http://localhost:4000/api/Grid_masters"
+  const url = "http://localhost:4000/api/Colonne_details"
   const [formData, setformData] = useState(initialvalue);
 
   const [open, setOpen] = React.useState(false);
@@ -61,7 +61,7 @@ const App = () => {
     getUsers();
   }, [])
 
-
+//afficher utilisateur
   const getUsers = () => {
     fetch(url).then(resp => resp.json()).then(resp => settableData(resp))
 

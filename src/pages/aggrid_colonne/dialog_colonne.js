@@ -19,7 +19,7 @@ export default function FormDialog({open,handleClose,data,onChange,handleFormSub
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{id?"modifier le colonne":"Ajouter un colonne"}</DialogTitle>
+        <DialogTitle id_colonne="alert-dialog-title">{id_colonne?"modifier le colonne":"Ajouter un colonne"}</DialogTitle>
         <DialogContent>
         <form>
              <TextField id="id_colonne" value={id_colonne} onChange={e=>onChange(e)} placeholder="Enter id" label="id_colonne" variant="outlined" margin="dense" fullWidth required />
@@ -31,7 +31,7 @@ export default function FormDialog({open,handleClose,data,onChange,handleFormSub
         <DialogActions>
           <Button onClick={handleClose} color="secondary" variant="outlined" >Annuler</Button>
           <Button  autoFocus  variant="contained" onClick={()=>handleFormSubmit()}>
-          {id?"Modifier":"Ajouter"}
+          {id_colonne?"Modifier":"Ajouter"}
           </Button>
         </DialogActions>
       </Dialog>
